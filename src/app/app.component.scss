@@ -1,0 +1,76 @@
+// This is just to center the spinner
+
+html,
+body,
+ion-app {
+  height: 100%;
+}
+
+body,
+ion-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-container {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  //   opacity: 0;
+  //   animation: disapear 3s forwards;
+  //   border-radius: 20px;
+  //   box-shadow: inset 0 0 15px rgba(55, 84, 170, 0),
+  //     inset 0 0 20px rgba(255, 255, 255, 0), 7px 7px 15px rgba(55, 84, 170, 0.15),
+  //     -7px -7px 20px rgba(255, 255, 255, 1),
+  //     inset 0px 0px 4px rgba(255, 255, 255, 0.2);
+}
+.loader-container img {
+  position: absolute;
+}
+
+// Here is where the magic happens
+
+$offset: 622;
+$duration: 1.4s;
+
+.spinner {
+  animation: rotator $duration linear infinite;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+.path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  stroke: darkblue;
+  animation: dash $duration ease-in-out infinite;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: $offset;
+  }
+  50% {
+    stroke-dashoffset: $offset/4;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: $offset;
+    transform: rotate(450deg);
+  }
+}
+
+@keyframes disapear {
+  100% {
+    opacity: 1;
+  }
+}
