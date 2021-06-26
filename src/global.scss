@@ -24,3 +24,16 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.contrast{
+  background-color: black;
+  --background: black;
+  --ion-background: black;
+  --ion-background-color: black;
+  color: yellow;
+
+  .button{
+    border: 1px solid yellow;
+  }
+}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ModalComponent } from '../components/modal/modal.component';
+import { WcagService } from '../services/wcag.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,8 @@ import { ModalComponent } from '../components/modal/modal.component';
 export class HomePage {
 
   constructor(
-    private modalController:ModalController
+    private modalController:ModalController,
+    private wcag:WcagService
   ) {}
 
   async presentModal() {
@@ -21,5 +23,10 @@ export class HomePage {
       cssClass: 'my-custom-class'
     });
     return await modal.present();
+  }
+
+  darkModeOn:boolean;
+  ngDoCheck(){
+    this.darkModeOn = this.wcag.darkMode;
   }
 }
