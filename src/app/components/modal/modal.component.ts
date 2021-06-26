@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { WcagService } from 'src/app/services/wcag.service';
 
 @Component({
@@ -14,16 +14,25 @@ export class ModalComponent implements OnInit {
     private wcag:WcagService
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.darkModeOn = this.wcag.darkMode;
+    this.bigFontOn = this.wcag.bigFont;
+  }
 
   dismiss() {
     this.modalController.dismiss({
       'dismissed': true
     });
   }
-  darkModeOn:boolean = false;
+
+  darkModeOn:boolean;
   darkMode(){
     this.wcag.darkMode = !this.darkModeOn;
     this.darkModeOn = !this.darkModeOn;
+  }
+  bigFontOn:boolean;
+  bigFont(){
+    this.wcag.bigFont = !this.bigFontOn;
+    this.bigFontOn = !this.bigFontOn;
   }
 }

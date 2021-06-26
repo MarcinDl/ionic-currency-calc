@@ -26,7 +26,9 @@ export class HomePage {
   }
 
   darkModeOn:boolean;
+  bigFontOn:boolean;
   ngDoCheck(){
     this.darkModeOn = this.wcag.darkMode;
+    this.bigFontOn = this.wcag.bigFont;
   }
 }

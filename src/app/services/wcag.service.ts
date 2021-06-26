@@ -8,4 +8,5 @@ export class WcagService {
   constructor() { }
 
   darkMode:boolean;
+  bigFont:boolean;
 }

@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true" [ngClass]="darkModeOn ? 'contrast' : ''">
+<ion-content [fullscreen]="true" [ngClass]="[darkModeOn ? 'contrast' : '',bigFontOn ? 'bigFont' : '']">
   <ion-button (click)="presentModal()">
     Kliknij mnie
   </ion-button>

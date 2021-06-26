@@ -1,6 +1,7 @@
-<div class="modal" [ngClass]="darkModeOn ? 'contrast' : ''">
+<div class="modal" [ngClass]="[darkModeOn ? 'contrast' : '',bigFontOn ? 'bigFont' : '']">
 
   <div class="button" (click)="dismiss()"> Zamknij modal </div>
   <div class="button" (click)="darkMode()" > Tryb kontrastowy </div>
+  <div class="button" (click)="bigFont()" > Powiększ font </div>
 
 </div>
