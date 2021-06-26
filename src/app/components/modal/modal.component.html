@@ -1,3 +1,7 @@
-<ion-button (click)="dismiss()">
-  Zamknij modal
-</ion-button>
+<div class="modal" [ngClass]="contrast ? 'contrast' : ''">
+
+  <div class="button" (click)="dismiss()"> Zamknij modal </div>
+  <div class="button" (click)="contrast = !contrast" > Tryb kontrastowy </div>
+
+
+</div>

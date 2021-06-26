@@ -7,7 +7,7 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./modal.component.scss'],
 })
 export class ModalComponent implements OnInit {
-
+  contrast:boolean
   constructor(
     private modalController:ModalController
   ) { }
@@ -15,8 +15,6 @@ export class ModalComponent implements OnInit {
   ngOnInit() {}
 
   dismiss() {
-    // using the injected ModalController this page
-    // can "dismiss" itself and optionally pass back data
     this.modalController.dismiss({
       'dismissed': true
     });
