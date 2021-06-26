@@ -23,7 +23,8 @@ export class AppComponent {
     this.platform.ready().then( () => {
       setTimeout( () => {
         this.routerHidden = false;
-        this.splash.nativeElement.style.display = "none";
+        // this.splash.nativeElement.style.display = "none";
+        this.splash.nativeElement.classList.add("sampleClass")
       },2000)
     })
   }

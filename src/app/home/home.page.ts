@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { ModalComponent } from '../components/modal/modal.component';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,17 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(
+    private modalController:ModalController
+  ) {}
 
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: ModalComponent,
+      swipeToClose:true,
+      mode: "ios",
+      cssClass: 'my-custom-class'
+    });
+    return await modal.present();
+  }
 }
